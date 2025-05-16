@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrushali Rao | Full Stack Developer</title>
+    <style>
+        :root {
+            --primary: #FF2D20;
+            --secondary: #3B3F48;
+            --light: #F3F4F6;
+            --dark: #1A202C;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            background-color: #FCFCFC;
+        }
+
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--primary);
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-meta div {
+            margin-right: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta strong {
+            color: var(--secondary);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #EDF2F7;
+            color: #4A5568;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tag.primary {
+            background-color: #FEECEB;
+            color: var(--primary);
+        }
+
+        .testimonial {
+            font-style: italic;
+            padding: 1.5rem;
+            background-color: var(--light);
+            border-left: 4px solid var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-style: normal;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .contact-links {
+            margin-top: 1rem;
+        }
+
+        .contact-links a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <img src="unnamed.jpg" alt="Vrushali Rao" class="profile-img">
+            <h1>Vrushali Rao</h1>
+            <p class="subtitle">Full Stack Developer</p>
+
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about" class="active">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Iam a passionate Full Stack Developer with over 3 years of specialized experience in
+                PHP/Laravel development, building on a strong foundation of database engineering and technical roles
+                spanning more than 10 years in the industry. Throughout my career, I've transformed complex business
+                requirements into elegant, efficient technical solutions.</p>
+
+            <p>I am proficient in modern PHP frameworks including Laravel 11, Filament, Livewire, and CodeIgniter, and
+                have experience with Spatie's packages such as Laravel Model States and Permissions. My frontend
+                development skills include jQuery and AJAX for creating dynamic user interfaces, and I have a strong
+                foundation in database design and optimization, with extensive experience in MySQL and SQL Server.</p>
+
+            <p>My professional journey began at Cognizant where I worked as an Associate focused on database
+                administration and ETL workflows. This experience gave me strong technical foundations and an
+                understanding of data architecture. I then joined Codebox where I transitioned through various technical
+                roles before growing into my current position as a Full Stack Developer. This unique progression has
+                given me a holistic understanding of the development lifecycle from concept to deployment.</p>
+
+            <!--<p>I'm particularly proud of the project management tool I developed using Laravel, Livewire, and
+                Filament,
+                which features Kanban-style workflows and robust issue tracking capabilities. I've also created an
+                Employee Management System using CodeIgniter, AJAX, and jQuery that streamlined HR processes with
+                features like attendance tracking, project reporting, and document handling.</p>  -->
+            <p>I am committed to continuous learning and exploring new technologies to enhance my skills and deliver
+                better solutions. I believe in writing code that is not only functional but also maintainable, scalable,
+                and aligned with business objectives.</p>
+
+            <div>
+                <span class="tag primary">Laravel 11</span>
+                <span class="tag primary">Codeigniter 3</span>
+                <span class="tag primary">PHP 8+</span>
+                <span class="tag primary">JavaScipt</span>
+                <span class="tag">JIRA</span>
+                <span class="tag">GitHub/GitLab</span>
+                <span class="tag">CI/CD</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">API Integration</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Agile/Scrum</span>
+                <span class="tag">Requirements Analysis</span>
+                <span class="tag">User Story Mapping</span>
+                <span class="tag">Technical Documentation</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background-color: var(--light);">
+        <div class="container">
+            <h2>Laravel Project Portfolio</h2>
+
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h3>Project Management Tool</h3>
+                <div class="project-meta">
+                    <div><strong>Role:</strong> Full Stack Developer </div>
+                    <div><strong>Duration:</strong> 1.5 years</div>
+                    <div><strong>Team Size:</strong> 6 members </div>
+
+                </div>
+
+                <h4>Project Overview</h4>
+                <p>Developed a comprehensive project management system with integrated modules for:</p>
+                <ul>
+                    <li>Kanban-style board views with customizable workflow stages</li>
+                    <li>Advanced issue tracking with custom fields and metadata</li>
+                    <li>Detailed issue forms with rich text editing capabilities</li>
+                    <li>List views with robust filtering and sorting options</li>
+                </ul>
+                <h4>Technical Challenges & Solutions:</h4>
+                <ul>
+                    <li>Engineered responsive real-time board updates using Laravel Livewire without page reloads</li>
+                    <li>Implemented a flexible workflow system allowing customization of stages per project</li>
+                    <li>Designed normalized database schema optimizing relationships between issues, users, and projects
+                    </li>
+                    <li>Created a modular component architecture for reusable UI elements across the platform</li>
+                </ul>
+
+
+                <h4>Key Contributions:</h4>
+                <ul>
+
+                    <li>Built a complete end-to-end project management solution using Laravel, Livewire, and Filament
+                    </li>
+                    <li>Optimized database queries to handle large datasets efficiently in list views</li>
+                    <li>Implemented client-side validation reducing server requests and improving user experience</li>
+                    <li>Created a flexible permissions system with role-based access control</li>
+
+                </ul>
+
+                <h4>Measurable Outcomes:</h4>
+                <ul>
+
+                    <li>Reduced project tracking overhead by [X%] through streamlined issue management</li>
+                    <li>Improved team collaboration by providing visibility into project status through board views</li>
+                    <li>Decreased time spent on status updates by [X%] through automated workflow transitions</li>
+                    <li>Enhanced decision-making with comprehensive filtering and reporting capabilities</li>
+
+                </ul>
+
+                <div>
+                    <span class="tag primary">Laravel 11</span>
+                    <span class="tag primary">Livewire</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Filament</span>
+                </div>
+            </div>
+
+
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills & Knowledge</h2>
+
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Laravel & PHP Expertise</h3>
+                    <ul>
+                        <li>Laravel architecture patterns</li>
+                        <li>Eloquent ORM </li>
+                        <li>Custom Artisan commands</li>
+                        <li>Livewire (reactive Laravel components)</li>
+                        <li>Filament (admin panel, form builder, tables)</li>
+                        <li>REST API development & integration</li>
+                        <li>CodeIgniter 3 (legacy maintenance, controller-model separation)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <ul>
+                        <li>JavaScript (vanilla JS, ES6+)</li>
+                        <li>AJAX (asynchronous requests, API calls)</li>
+                        <li>jQuery (DOM manipulation, events)</li>
+                        <li>Alpine.js (lightweight reactivity)</li>
+                        <li>Blade templating (Laravel)</li>
+                        <li>Responsive UI with Tailwind CSS</li>
+                    </ul>
+                </div>
+
+
+                <div class="skill-category">
+                    <h3>Database Administration</h3>
+                    <ul>
+                        <li>SQL Server (database backups, jobs, performance tuning)</li>
+                        <li>Oracle DBA tasks (schemas, roles, data import/export)</li>
+                        <li>MySQL (query optimization, indexing)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <ul>
+                        <li>Agile/Scrum methodology</li>
+                        <li>Technical requirement gathering</li>
+                        <li>Risk management</li>
+                        <li>Resource allocation</li>
+                        <li>Sprint planning & retrospectives</li>
+                        <li>Stakeholder management</li>
+                        <li>Technical documentation</li>
+                        <li>Change management</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>DevOps & Infrastructure</h3>
+                    <ul>
+                        <li>CI/CD with GitHub Actions</li>
+                        <li>Docker Desktop (containerized dev environments)</li>
+                        <li>Database optimization</li>
+                        <li>Load balancing configuration</li>
+                        <li>Deployment strategies</li>
+                        <li>Security best practices</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <ul>
+                        <li>JIRA/Confluence</li>
+                        <li>GitHub/GitLab</li>
+                        <li>Jenkins/GitHub Actions</li>
+                        <li>PHPUnit/Pest</li>
+                        <li>New Relic/Datadog</li>
+                        <li>Slack/Microsoft Teams</li>
+                        <li>MySQL/PostgreSQL</li>
+                        <li>Redis/Memcached</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: var(--light);">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>I'm currently open to new Laravel project management opportunities. Whether you need a technical project
+                manager for a complete application build, a migration project, or ongoing development, I'd love to
+                explore how I can help.Feel free to get in touch to start the conversation.</p>
+
+            <div class="project-card">
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> vrushalirao@icloud.com</p>
+                <p><strong>Phone:</strong> +91 9619623585</p>
+                <p><strong>Location:</strong> Mumbai</p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Vrushali Rao | Full Stack Developer</p>
+        </div>
+    </footer>
+</body>
+
+</html>
